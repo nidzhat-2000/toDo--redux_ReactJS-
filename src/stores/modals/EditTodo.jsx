@@ -1,13 +1,12 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux'
 
-
-function editTodo() {
-
-  const {name, data} = 
-
-
-  return <div>editTodo</div>;
+function EditTodo({ data, close }) {
+  return (
+    <div>
+      edit to do modal
+      <p>{JSON.stringify(data, null, 2)}</p>
+    </div>
+  );
 }
 
-export default editTodo;
+export default EditTodo;

@@ -14,7 +14,7 @@ function App() {
 
   const { open: modalIsOpen } = useSelector(state => state.modal);
 
-  const close = () => setModal(false);
+  // const close = () => setModal(false);
 
   return (
     <main className="App">
@@ -37,7 +37,7 @@ function App() {
       {modalIsOpen && <Modal />}
       <Header />
       <AddToDo />
-      <ToDoList setModal={setModal} />
+      <ToDoList />
     </main>
   );
 }
