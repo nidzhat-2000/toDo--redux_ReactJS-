@@ -1,18 +1,21 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { logIn, logOut } from '../stores/auth';
+import { logInHandle, logOutHandle } from '../utils';
+// import { logIn, logOut } from '../stores/auth';
 
 function Header() {
   const user = useSelector(state => state.auth.user);
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   const loginHandle = user => {
-    dispatch(logIn(user));
+    // dispatch(logIn(user));
+    logInHandle(user);
   };
 
   const logoutHandle = () => {
-    dispatch(logOut());
+    // dispatch(logOut());
+    logOutHandle();
   };
 
   return (
@@ -31,7 +34,7 @@ function Header() {
       {user && (
         <nav>
           <h3>Welcome, {user.username}</h3>
-          <button onClick={() => logoutHandle()}>Log out</button>
+          <button onClick={logOutHandle}>Log out</button>
         </nav>
       )}
     </header>

@@ -3,10 +3,11 @@ import React, { useState } from 'react';
 import { addTodo } from '../stores/todo';
 
 import { useSelector, useDispatch } from 'react-redux';
+import { addTodoHandle } from '../utils';
 
 function AddToDo({ setTodos }) {
   const { user } = useSelector(state => state.auth);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   const [todo, setTodo] = useState('');
 
@@ -21,14 +22,15 @@ function AddToDo({ setTodos }) {
     //   },
     //   ...todos,
     // ]);
-    dispatch(
-      addTodo({
-        title: todo,
-        done: false,
-        id: nanoid(),
-        user: user.username,
-      })
-    );
+    // dispatch(
+    // addTodo(
+    addTodoHandle({
+      title: todo,
+      done: false,
+      id: nanoid(),
+      user: user.username,
+    });
+    // );
     setTodo('');
   };
 

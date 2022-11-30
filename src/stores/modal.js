@@ -13,7 +13,7 @@ const modal = createSlice({
     openModal: (state, action) => {
       state.user = action.payload.name;
       state.data = action.payload?.data || false;
-      console.log(state.data)
+      // console.log(state.data)
       // state.data = false;
       state.open = true;
     },

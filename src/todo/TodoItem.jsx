@@ -2,8 +2,9 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { openModal } from '../stores/modal';
 import { deleteItem } from '../stores/todo';
+import { modal } from '../utils';
 
-function TodoItem({ todo, setTodos }) {
+function TodoItem({ todo }) {
   const dispatch = useDispatch();
   const { user } = useSelector(state => state.auth);
 
@@ -17,12 +18,15 @@ function TodoItem({ todo, setTodos }) {
     //     name: 'edit-todo',
     //     data: todo,
     //   });
-    dispatch(
-      openModal({
-        name: 'edit-todo',
-        data: todo,
-      })
-    );
+
+    // dispatch(
+    //   openModal({
+    //     name: 'edit-todo',
+    //     data: todo,
+    //   })
+    // );
+
+    modal('edit-todo', todo);
   };
 
   return (
